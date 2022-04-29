@@ -1,0 +1,57 @@
+.title{
+    background-color: #FBED71;
+    width: 32vw;
+    text-align: center;
+    font-size: 5vw;
+    padding-top: 1vh;
+
+}
+.log_and_reg_area{
+    display: flex;
+    width: 100%;
+    padding-top: 2vh;
+}
+.reg{
+    position: relative;
+    left: 10vw;
+}
+.log{
+    position: relative;
+    left: 5vw;
+}
+.space{
+    height: 3vh;
+}
+.serch_area{
+    background-color: #E5E5E5;
+    position: relative;
+    top: 3vh;
+    width: 100%;
+}
+.keyword{
+    width: 80vw;
+    position: relative;
+    left: 5vw;
+}
+.kensaku{
+    position: relative;
+    left: 5vw;
+}
+.serch_keyword{
+    display: flex;
+    
+}
+.main_contents{
+    background-color: #EBECCC;
+    padding-top: 3vh;
+}
+.footer{
+    background-color: black;
+    padding-top: 1.5vh;
+    width: 100%;
+    height: 7vh;
+}
+.copy_right{
+    color: white;
+    text-align: center;
+}
