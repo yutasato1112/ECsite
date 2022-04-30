@@ -31,7 +31,54 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
+        <div class="space"></div>
+        <ul class="cardUnit">
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+            <li class="card">
+                <img src="https://placehold.jp/400x300.png" alt="">
+                <p>商品名</p>
+                <p>価格</p>
+            </li>
+        </ul>
 
         <!-- メインコンテンツここまで -->
     </div>
