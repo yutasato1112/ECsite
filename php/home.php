@@ -47,7 +47,7 @@
                 while($row=pg_fetch_array($result)){
                     $item_id=$row['item_id'];
                     print "<li class=card>";
-                    print "<a href=detail.php?$item_id>";
+                    print "<a href=detail.php?res_name=$item_id>";
                             $pic =$row['item_pic'];
                             $name=$row['item_name'];
                             $price=$row['item_price'];
