@@ -59,33 +59,6 @@
                     print "<p>価格 $price</p>";
                     print "</li>";
                 }
-                
-
-                print "<ul class=cardUnit>";
-                print "<li class=card>";
-                    print "<img src=https://placehold.jp/400x300.png alt=>";
-                    print "<p>商品名</p>";
-                    print "<p>価格</p>";
-                print "</li>";
-
-                print "<li class=card>";
-                    print "<img src=https://placehold.jp/400x300.png alt=>";
-                    print "<p>商品名</p>";
-                    print "<p>価格</p>";
-                print "</li>";
-
-                print "<li class=card>";
-                    print "<img src=https://placehold.jp/400x300.png alt=>";
-                    print "<p>商品名</p>";
-                    print "<p>価格</p>";
-                print "</li>";
-
-                print "<li class=card>";
-                    print "<img src=https://placehold.jp/400x300.png alt=>";
-                    print "<p>商品名</p>";
-                    print "<p>価格</p>";
-                print "</li>";
-
             print "</ul>";
 
             }catch (PDOException $e){
