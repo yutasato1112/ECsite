@@ -55,8 +55,6 @@
     color: white;
     text-align: center;
 }
-
-
 img{
     width: 100%;
 }
@@ -67,4 +65,11 @@ img{
     justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
+}
+.space_f{
+    height: 3vh;
+    background-color: #EBECCC;
+}
+.card{
+    background-color: #E2E2E2;
 }

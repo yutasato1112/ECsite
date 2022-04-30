@@ -43,13 +43,9 @@
                 } 
                 // PostgreSQLに対する処理
                 $result = pg_query('SELECT * FROM item');
+                print "<ul class=cardUnit>";
                 while($row=pg_fetch_array($result)){
-                    //echo $row['item_name'];
-                    //echo $row['item_pic'];
-                    //$pic =$row['item_pic'];
-                    //print "<img src=$pic>";
 
-                    print "<ul class=cardUnit>";
                     print "<li class=card>";
                     $pic =$row['item_pic'];
                     $name=$row['item_name'];
@@ -59,7 +55,7 @@
                     print "<p>価格 $price</p>";
                     print "</li>";
                 }
-            print "</ul>";
+                print "</ul>";
 
             }catch (PDOException $e){
                 print('Error:'.$e->getMessage());
@@ -68,7 +64,9 @@
         ?>
 
         <!-- メインコンテンツここまで -->
+    
     </div>
+    <div class="space_f"></div>
     <div class="footer">
         <p class="copy_right">©yutasato & yukioda</p>
     </div>
