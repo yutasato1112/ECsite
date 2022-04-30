@@ -32,53 +32,67 @@
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
         <div class="space"></div>
-        <ul class="cardUnit">
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-            <li class="card">
-                <img src="https://placehold.jp/400x300.png" alt="">
-                <p>商品名</p>
-                <p>価格</p>
-            </li>
-        </ul>
+        <?php
+            //テストエリア
+            //ここまで 
+            try{
+                $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
+                $link = pg_connect($conn);
+                if (!$link) {
+                    die('接続失敗です。'.pg_last_error());
+                } 
+                // PostgreSQLに対する処理
+                $result = pg_query('SELECT * FROM item');
+                while($row=pg_fetch_array($result)){
+                    //echo $row['item_name'];
+                    //echo $row['item_pic'];
+                    //$pic =$row['item_pic'];
+                    //print "<img src=$pic>";
+
+                    print "<ul class=cardUnit>";
+                    print "<li class=card>";
+                    $pic =$row['item_pic'];
+                    $name=$row['item_name'];
+                    $price=$row['item_price'];
+                    print "<img src=$pic alt=>";
+                    print "<p>商品名 $name</p>";
+                    print "<p>価格 $price</p>";
+                    print "</li>";
+                }
+                
+
+                print "<ul class=cardUnit>";
+                print "<li class=card>";
+                    print "<img src=https://placehold.jp/400x300.png alt=>";
+                    print "<p>商品名</p>";
+                    print "<p>価格</p>";
+                print "</li>";
+
+                print "<li class=card>";
+                    print "<img src=https://placehold.jp/400x300.png alt=>";
+                    print "<p>商品名</p>";
+                    print "<p>価格</p>";
+                print "</li>";
+
+                print "<li class=card>";
+                    print "<img src=https://placehold.jp/400x300.png alt=>";
+                    print "<p>商品名</p>";
+                    print "<p>価格</p>";
+                print "</li>";
+
+                print "<li class=card>";
+                    print "<img src=https://placehold.jp/400x300.png alt=>";
+                    print "<p>商品名</p>";
+                    print "<p>価格</p>";
+                print "</li>";
+
+            print "</ul>";
+
+            }catch (PDOException $e){
+                print('Error:'.$e->getMessage());
+                die();
+            }
+        ?>
 
         <!-- メインコンテンツここまで -->
     </div>
