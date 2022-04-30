@@ -45,14 +45,16 @@
                 $result = pg_query('SELECT * FROM item');
                 print "<ul class=cardUnit>";
                 while($row=pg_fetch_array($result)){
-
+                    $item_id=$row['item_id'];
                     print "<li class=card>";
-                    $pic =$row['item_pic'];
-                    $name=$row['item_name'];
-                    $price=$row['item_price'];
-                    print "<img src=$pic alt=>";
-                    print "<p>商品名 $name</p>";
-                    print "<p>価格 $price</p>";
+                    print "<a href=detail.php?$item_id>";
+                            $pic =$row['item_pic'];
+                            $name=$row['item_name'];
+                            $price=$row['item_price'];
+                            print "<img src=$pic alt=>";
+                            print "<p>商品名 $name</p>";
+                            print "<p>価格 $price</p>";
+                        print "</a>";
                     print "</li>";
                 }
                 print "</ul>";
