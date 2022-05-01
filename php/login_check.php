@@ -38,6 +38,9 @@
                 if(strcmp($id,$user_id) ==0){
                     if(strcmp($hash_pass,$user_pass) == 0){
                         echo "succcess";
+                        session_start();
+                        $_SESSION['user_id']=$id;
+                        $_SESSION['user_pass']=$hash_pass;
                         print "<META http-equiv=Refresh content=1;URL=account.php>";
                     }else{
                         print "<META http-equiv=Refresh content=1;URL=login.php>";
