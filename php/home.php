@@ -60,7 +60,7 @@
                     die('接続失敗です。'.pg_last_error());
                 } 
                 // PostgreSQLに対する処理
-                $result = pg_query('SELECT * FROM item');
+                $result = pg_query('SELECT * FROM item WHERE item_status is true');
                 print "<ul class=cardUnit>";
                 while($row=pg_fetch_array($result)){
                     $item_id=$row['item_id'];
