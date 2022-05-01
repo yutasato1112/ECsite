@@ -66,7 +66,7 @@
                     print "<p class=s_title>お届け先情報</p>";
 
                     
-                    echo "<form class=\"row g-3 needs-validation\" novalidate=\"\">\n";
+                    echo "<form class=\"row g-3 needs-validation info\" novalidate=\"\">\n";
                     echo "  <div class=\"col-md-4\">\n";
                     echo "    <label for=\"validationCustom01\" class=\"form-label\">名字</label>\n";
                     echo "    <input type=\"text\" class=\"form-control\" id=\"validationCustom01\" value=\"\" required=\"\">\n";
@@ -151,8 +151,32 @@
                     echo "      Please provide a valid city.\n";
                     echo "    </div>\n";
                     echo "  </div>\n";
-                    echo "</form>";
 
+                    echo "<p class=s_title>お支払い情報</p>";
+
+                    echo "<select class=\"form-select form-select-lg\" aria-label=\"Large select\">\n";
+                    echo "  <option selected=\"\">カードブランドを選択</option>\n";
+                    echo "  <option value=\"1\">Visa</option>\n";
+                    echo "  <option value=\"2\">Mastercard</option>\n";
+                    echo "  <option value=\"3\">JCB</option>\n";
+                    echo "</select>";
+
+                    echo "<div class=\"input-group input-group-lg\">\n";
+                    echo "  <span class=\"input-group-text\" id=\"input-group-lg-example\">カード番号</span>\n";
+                    echo "  <input type=\"text\" class=\"form-control\" aria-label=\"Large input group\" aria-describedby=\"input-group-lg\">\n";
+                    echo "</div>";
+
+                    echo "<div class=\"input-group input-group-lg\">\n";
+                    echo "  <span class=\"input-group-text\" id=\"input-group-lg-example\">有効期限</span>\n";
+                    echo "  <input type=\"text\" class=\"form-control\" aria-label=\"Large input group\" aria-describedby=\"input-group-lg\">\n";
+                    echo "</div>";
+
+                    echo "<div class=\"input-group input-group-lg\">\n";
+                    echo "  <span class=\"input-group-text\" id=\"input-group-lg-example\">セキュリティコード</span>\n";
+                    echo "  <input type=\"text\" class=\"form-control\" aria-label=\"Large input group\" aria-describedby=\"input-group-lg\">\n";
+                    echo "</div>";
+
+                    print "<button type=button onClick=location.href='buy_fin.php?res_name=$item_id' class='btn btn-primary btn-lg buy'>送信</button>";
                 }
             }catch (PDOException $e){
                 print('Error:'.$e->getMessage());

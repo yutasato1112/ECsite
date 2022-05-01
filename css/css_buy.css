@@ -63,3 +63,25 @@
     height: 3vh;
     background-color: #EBECCC;
 }
+.s_title{
+    font-size: 4vh;
+    text-align: center ;
+}
+.name{
+    font-size: 3vh;
+    text-align: center;
+}
+.price{
+    font-size: 3vh;
+    text-align: center;
+}
+.info{
+    width: 75%;
+    position: relative;
+    left: 13%;
+}
+.buy{
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
