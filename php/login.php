@@ -32,12 +32,18 @@
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
         <div class=space_m></div>
+        <?php
+            $motourl = $_SERVER['HTTP_REFERER'];
+            if(strpos($motourl, 'login_check.php') !== false){
+                print "<p class=miss>ログインIDまたはログインパスワードが間違っています</p>";
+            }
+        ?>
         <form action="login_check.php" method="GET" class="login_area">
             <label for="formControlInput" class="form-label">ログインID</label>
             <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name=login_id>
             <div class="space"></div>
             <label for="formControlInput" class="form-label">パスワード</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Password" name=login_pass>
+            <input type="password" class="form-control" id="formControlInput" placeholder="Password" name=login_pass>
             <div class="space"></div>
             <button type="submit" class="btn btn-secondary">OK</button>
         </form>  
