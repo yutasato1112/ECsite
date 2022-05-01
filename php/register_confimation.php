@@ -16,10 +16,16 @@
 <body>
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <button type="button" onclick="location.href='home.php'" class="title">ECサイト</button>
-    <div class="log_and_reg_area">
-        <button type="button" onclick="location.href='login.php'" class="btn btn-primary btn-lg log">ログイン</button>
-        <button type="button" onclick="location.href='register.php'" class="btn btn-primary btn-lg reg">新規登録</button>
-    </div>
+    <?php
+        session_start();
+        $id=$_SESSION['user_id'];
+        $pass=$_SESSION['user_pass'];
+        print "<div class=log_and_reg_area>";
+            print "<button type=button onclick=location.href='login.php' class='btn btn-primary btn-lg log'>ログイン</button>";
+            print "<button type=button onclick=location.href='register.php' class='btn btn-primary btn-lg reg'>新規登録</button>";
+            print "<p class=id>$id さん</p>";
+        print "</div>"
+    ?>
     <div class="serch_area">
         <div class="space"></div>
         <form action="serch.php" method="GET" class="serch_keyword">

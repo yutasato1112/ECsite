@@ -11,6 +11,10 @@
     width: 100%;
     padding-top: 2vh;
 }
+.id{
+    position: relative;
+    left: 15vw;
+}
 .reg{
     position: relative;
     left: 10vw;
