@@ -59,3 +59,45 @@
     color: white;
     text-align: center;
 }
+.space_f{
+    height: 3vh;
+    background-color: #EBECCC;
+}
+img{
+    width: 50vw;
+    position: relative;
+    left: 25%;
+}
+p{
+    text-align: center;
+}
+.price_buy_area{
+    display: flex;
+    justify-content: center;
+}
+
+.item_title{
+    font-size: 3vw;
+}
+.item_price{
+    font-size: 2vw;
+    color: red ;
+}
+.buy{
+    width: 20vw;
+}
+.space_w{
+    width: 10vw;
+}
+.space_lg{
+    height: 10vh;
+}
+.detail{
+    font-size: 2vw;
+}
+.detail_content{
+    font-size: 1.5vw;
+}
+.seller{
+    font-size: 1.5vw;
+}
