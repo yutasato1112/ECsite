@@ -55,3 +55,16 @@
     color: white;
     text-align: center;
 }
+
+.space_m{
+    height: 10vh;
+    background-color: #EBECCC;
+}
+.space_f{
+    height: 35vh;
+    background-color: #EBECCC;
+}
+.login_area{
+    width: 70%;
+    margin: auto;
+}

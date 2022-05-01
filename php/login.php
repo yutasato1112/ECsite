@@ -31,8 +31,17 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
-
+        <div class=space_m></div>
+        <form action="login_check.php" method="GET" class="login_area">
+            <label for="formControlInput" class="form-label">ログインID</label>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name=login_id>
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label">パスワード</label>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Password" name=login_pass>
+            <div class="space"></div>
+            <button type="submit" class="btn btn-secondary">OK</button>
+        </form>  
+        <div class="space_f"></div>
         <!-- メインコンテンツここまで -->
     </div>
     <div class="footer">
