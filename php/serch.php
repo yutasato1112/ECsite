@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Luxurious+Roman&display=swap" rel="stylesheet">
     <title>検索結果</title>
 
+    <script language="JavaScript">
+        function Check(){
+        if(document.serch_form.res_name.value==""){
+            alert("検索キーワードを入力してください。");
+            return false;
+        }
+            return true;
+        }
+    </script>
+
 </header>
 <body>
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
@@ -22,7 +32,7 @@
     </div>
     <div class="serch_area">
         <div class="space"></div>
-        <form action="serch.php" method="GET" class="serch_keyword">
+        <form action="serch.php" method="GET" class="serch_keyword" name="serch_form" onsubmit="return Check()">
             <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name">
             <button type="submit" class="btn btn-secondary kensaku">検索</button>
         </form>
@@ -31,10 +41,50 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
+        <div class="space"></div>
+        <?php
+            //テストエリア
+            //ここまで 
+            $keyword = $_GET['res_name'];
+            try{
+                $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
+                $link = pg_connect($conn);
+                if (!$link) {
+                    die('接続失敗です。'.pg_last_error());
+                } 
+                // PostgreSQLに対する処理
+                $result = pg_query("SELECT * FROM item WHERE item_name LIKE '%$keyword%'");
+                $item_count = pg_query("SELECT COUNT (*) FROM item WHERE item_name LIKE '%$keyword%'");
+                while($row_count=pg_fetch_array($item_count)){
+                    $count=$row_count['count'];
+                    print "<p class=count_result>検索結果は'$count'件です</p>";
+                }
+                print "<div class=space></div>";
+                print "<ul class=cardUnit>";
+                while($row=pg_fetch_array($result)){
+                    $item_id=$row['item_id'];
+                    print "<li class=card>";
+                    print "<a href=detail.php?res_name=$item_id>";
+                            $pic =$row['item_pic'];
+                            $name=$row['item_name'];
+                            $price=$row['item_price'];
+                            print "<img src=$pic alt=>";
+                            print "<p>商品名 $name</p>";
+                            print "<p>価格 $price</p>";
+                        print "</a>";
+                    print "</li>";
+                }
+                print "</ul>";
+
+            }catch (PDOException $e){
+                print('Error:'.$e->getMessage());
+                die();
+            }
+        ?>
 
         <!-- メインコンテンツここまで -->
     </div>
+    <div class="space_f"></div>
     <div class="footer">
         <p class="copy_right">©yutasato & yukioda</p>
     </div>

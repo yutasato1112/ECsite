@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Luxurious+Roman&display=swap" rel="stylesheet">
     <title>ホーム</title>
 
+    <script language="JavaScript">
+        function Check(){
+        if(document.serch_form.res_name.value==""){
+            alert("検索キーワードを入力してください。");
+            return false;
+        }
+            return true;
+        }
+    </script>
+
 </header>
 <body>
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
@@ -22,7 +32,7 @@
     </div>
     <div class="serch_area">
         <div class="space"></div>
-        <form action="serch.php" method="GET" class="serch_keyword">
+        <form action="serch.php" method="GET" class="serch_keyword" name="serch_form" onsubmit="return Check()">
             <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name">
             <button type="submit" class="btn btn-secondary kensaku">検索</button>
         </form>
