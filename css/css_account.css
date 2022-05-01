@@ -59,3 +59,33 @@
     color: white;
     text-align: center;
 }
+.space_f{
+    height: 3vh;
+    background-color: #EBECCC;
+}
+.s_title{
+    font-size: 4vh;
+    text-align: center;
+}
+.sell{
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
+img{
+    width: 100%;
+}
+.cardUnit{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px 10px;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.card{
+    background-color: #E2E2E2;
+}
+a{
+    color: black;
+}

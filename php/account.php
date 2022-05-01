@@ -39,10 +39,75 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        
+        <div class="space"></div>
+        <p class="s_title">商品の出品</p>
+        <button onClick="location.href='sell.php'" type="button" class="btn btn-primary sell">出品</button>
+        <div class="space"></div>
+        <?php
+            print "<p class=s_title>購入した商品</p>";
+            try{
+                $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
+                $link = pg_connect($conn);
+                if (!$link) {
+                    die('接続失敗です。'.pg_last_error());
+                } 
+                // PostgreSQLに対する処理
+                $result = pg_query("SELECT * FROM item WHERE item_buyer = '$id'");
+                print "<ul class=cardUnit>";
+                while($row=pg_fetch_array($result)){
+                    $item_id=$row['item_id'];
+                    print "<li class=card>";
+                    print "<a href=detail.php?res_name=$item_id>";
+                            $pic =$row['item_pic'];
+                            $name=$row['item_name'];
+                            $price=$row['item_price'];
+                            print "<img src=$pic alt=>";
+                            print "<p>商品名 $name</p>";
+                            print "<p>価格 $price</p>";
+                        print "</a>";
+                    print "</li>";
+                }
+                print "</ul>";
 
+            }catch (PDOException $e){
+                print('Error:'.$e->getMessage());
+                die();
+            }
+            print "<div class=space></div>";
+            print "<p class=s_title>出品した商品</p>";
+            try{
+                $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
+                $link = pg_connect($conn);
+                if (!$link) {
+                    die('接続失敗です。'.pg_last_error());
+                } 
+                // PostgreSQLに対する処理
+                $result = pg_query("SELECT * FROM item WHERE item_seller = '$id'");
+                print "<ul class=cardUnit>";
+                while($row=pg_fetch_array($result)){
+                    $item_id=$row['item_id'];
+                    print "<li class=card>";
+                    print "<a href=detail.php?res_name=$item_id>";
+                            $pic =$row['item_pic'];
+                            $name=$row['item_name'];
+                            $price=$row['item_price'];
+                            print "<img src=$pic alt=>";
+                            print "<p>商品名 $name</p>";
+                            print "<p>価格 $price</p>";
+                        print "</a>";
+                    print "</li>";
+                }
+                print "</ul>";
+
+            }catch (PDOException $e){
+                print('Error:'.$e->getMessage());
+                die();
+            }
+        ?>
+        <div class="space_f"></div>
         <!-- メインコンテンツここまで -->
     </div>
+    <div class="space_f"></div>
     <div class="footer">
         <p class="copy_right">©yutasato & yukioda</p>
     </div>
