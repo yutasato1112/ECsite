@@ -67,7 +67,7 @@
                     print "<div class=price_buy_area>";
                         print "<p class=item_price>価格 : $price</p>";
                         print "<div class=space_w></div>";
-                        print "<button type=button onClick=location.href='buy.php?$item_id' class='btn btn-primary btn-lg buy'>購入</button>";
+                        print "<button type=button onClick=location.href='buy.php?res_name=$item_id' class='btn btn-primary btn-lg buy'>購入</button>";
                     print "</div>";
                     print "<div class=space_lg></div>";
                     print "<p class=detail>詳細</p>";
