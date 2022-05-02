@@ -59,3 +59,21 @@
     color: white;
     text-align: center;
 }
+.space_f{
+    height: 35vh;
+    background-color: #EBECCC;
+}
+.s_title{
+    font-size: 3vh;
+    text-align: center;
+}
+.content{
+    font-size: 2.5vh;
+    width: 100%;
+    text-align: center;
+}
+.s_p{
+    font-size: 2.75v;
+    width: 100%;
+    text-align: center;
+}

@@ -39,10 +39,69 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
-
+        <?php
+            $new_user_id=$_GET['new_user_id'];
+            $new_user_name=$_GET['new_user_name'];
+            $new_user_password=$_GET['new_user_password'];
+            $new_user_email=$_GET['new_user_email'];
+            $new_user_password_retype=$_GET['new_user_password_retype'];
+            $existence =0;
+            if($new_user_password != $new_user_password_retype){
+                print "<META http-equiv=Refresh content=1;URL=register.php>";
+            }
+            $new_user_password = md5($new_user_password_retype);
+            try{
+                $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
+                $link = pg_connect($conn);
+                if (!$link) {
+                    die('接続失敗です。'.pg_last_error());
+                } 
+                // PostgreSQLに対する処理
+                $result=pg_query("SELECT id FROM client WHERE id = '$new_user_id'");
+                while($row=pg_fetch_array($result)){
+                    $existence+=1;
+    
+                }
+                if($existence == 0){
+                    //同一IDがなかったときの処理   
+                        print "<div class=space></div>";
+                        print "<div class=con>";
+                            print "<p class=s_title>ログインID</p>";
+                            print "<p class=content>$new_user_id</p>";
+                        print "</div>" ;   
+                        print "<div class=con>";
+                            print "<p class=s_title>ログインパスワード</p>";
+                            print "<p class=content>$new_user_password_retype</p>";
+                        print "</div>" ;   
+                        print "<div class=con>";
+                            print "<p class=s_title>氏名</p>";
+                            print "<p class=content>$new_user_name</p>";
+                        print "</div>" ;   
+                        print "<div class=con>";
+                            print "<p class=s_title>メールアドレス</p>";
+                            print "<p class=content>$new_user_email</p>";
+                        print "</div>";
+                        print "<div class=space></div>";
+                        print "<p class=s_p>以上の内容で登録いたします。よろしいですか。</p>";
+                        print "<div class=space></div>";
+                        print "<div class=ok_btn_area>";
+                            echo "<button onClick=location.href='register.php' type=\"button\" class=\"btn btn-primary\">キャンセル</button>";
+                            echo "<button onClick=location.href='register_check.php' type=\"button\" class=\"btn btn-primary\">登録</button>";
+                        print "</div>";
+                }else{
+                    print "アカウントIDが既に使用されています";
+                    //print "<META http-equiv=Refresh content=1;URL=register.php>";
+                }
+            }catch (PDOException $e){
+                print('Error:'.$e->getMessage());
+                die();
+            }
+            
+        ?>
+        <div class="f_space"><div>
         <!-- メインコンテンツここまで -->
     </div>
+    <div class="f_space"><div>
     <div class="footer">
         <p class="copy_right">©yutasato & yukioda</p>
     </div>
