@@ -50,6 +50,10 @@
             $pic_name=uniqid().".".$type_name;
             move_uploaded_file($_FILES['new_item_pic']['tmp_name'], $PATH.$pic_name);
             $new_item_pic=$PATH.$pic_name;
+            $_SESSION['new_item_name']=$new_item_name;
+            $_SESSION['new_item_price']=$new_item_price;
+            $_SESSION['new_item_detail']=$new_item_detail;
+            $_SESSION['new_item_pic']=$new_item_pic;
 
             print "<div class=space></div>";
                     print "<p class=item_title>商品名 : $new_item_name</p>";
@@ -68,9 +72,9 @@
                     print "<p class=seller>出品者 : $new_item_seller</p>";
                     print "<div class=space_lg></div>";
                     print "<div class=price_buy_area>";
-                    print "<button type=button class='btn btn-primary btn-lg buy'>キャンセル</button>";
+                        print "<button onClick=location.href='sell.php' type=button class='btn btn-primary btn-lg buy'>キャンセル</button>";
                         print "<div class=space_w></div>";
-                        print "<button type=button class='btn btn-primary btn-lg buy'>出品</button>";
+                        print "<button onClick=location.href='sell_check.php' type=button class='btn btn-primary btn-lg buy'>出品</button>";
                     print "</div>";
         ?>
         <div class="space_f"></div>
