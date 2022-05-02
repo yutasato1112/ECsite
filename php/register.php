@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="../css/css_register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Luxurious+Roman&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Luxurious+Roman&display=swap"
+        rel="stylesheet">
     <title>新規登録</title>
 
 </header>
+
 <body>
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <button type="button" onclick="location.href='home.php'" class="title">ECサイト</button>
@@ -31,7 +33,8 @@
     <div class="serch_area">
         <div class="space"></div>
         <form action="serch.php" method="GET" class="serch_keyword">
-            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name">
+            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード"
+                aria-label=".form-control-lg" name="res_name">
             <button type="submit" class="btn btn-secondary kensaku">検索</button>
         </form>
         <div class="space"></div>
@@ -39,9 +42,26 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
-        <label for="formControlInput" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="formControlInput" placeholder="name@example.com">
+        <div class="space"></div>
+        <form action="register_confimation.php" method="GET" class="register_area">
+            <label for="formControlInput" class="form-label">ログインID</label>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name="new_user_id">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label">氏名</label>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Your name" name="new_user_name">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label">パスワード</label>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Password" name="new_user_password">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label">再入力</label>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Re-typing" name="new_user_retype">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label">メールアドレス</label>
+            <input type="email" class="form-control" id="formControlInput" placeholder="Email address" name="new_user_email">
+            <div class="space"></div>
+            <button type="submit" class="btn btn-secondary">OK</button>
+        </form>
+        <div class="space"></div>
 
         <!-- メインコンテンツここまで -->
     </div>
