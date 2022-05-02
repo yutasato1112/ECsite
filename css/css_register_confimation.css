@@ -77,3 +77,11 @@
     width: 100%;
     text-align: center;
 }
+.w_space{
+    width: 5vw;
+}
+.btn_area{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

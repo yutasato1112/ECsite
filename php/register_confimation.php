@@ -45,11 +45,17 @@
             $new_user_password=$_GET['new_user_password'];
             $new_user_email=$_GET['new_user_email'];
             $new_user_password_retype=$_GET['new_user_password_retype'];
+            
             $existence =0;
             if($new_user_password != $new_user_password_retype){
-                print "<META http-equiv=Refresh content=1;URL=register.php>";
+                //print "<META http-equiv=Refresh content=1;URL=register.php>";
             }
             $new_user_password = md5($new_user_password_retype);
+            session_start();
+            $_SESSION['new_user_id']=$new_user_id;
+            $_SESSION['new_user_name']=$new_user_name;
+            $_SESSION['new_user_password']=$new_user_password;
+            $_SESSION['new_user_email']=$new_user_email;
             try{
                 $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
                 $link = pg_connect($conn);
@@ -84,10 +90,12 @@
                         print "<div class=space></div>";
                         print "<p class=s_p>以上の内容で登録いたします。よろしいですか。</p>";
                         print "<div class=space></div>";
-                        print "<div class=ok_btn_area>";
-                            echo "<button onClick=location.href='register.php' type=\"button\" class=\"btn btn-primary\">キャンセル</button>";
-                            echo "<button onClick=location.href='register_check.php' type=\"button\" class=\"btn btn-primary\">登録</button>";
+                        print "<div class=btn_area>";
+                            print "<button onClick=location.href='register.php' type=\"button\" class=\"btn btn-primary\">キャンセル</button>";
+                            print "<div class=w_space></div>";
+                            print "<button onClick=location.href='register_check.php' type=\"button\" class=\"btn btn-primary\">登録</button>";
                         print "</div>";
+                        print "<div class=space></div>";
                 }else{
                     print "アカウントIDが既に使用されています";
                     //print "<META http-equiv=Refresh content=1;URL=register.php>";

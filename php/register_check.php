@@ -15,6 +15,11 @@
 </header>
 <body>
     <?php
+        session_start();
+        $new_user_id=$_SESSION['new_user_id'];
+        $new_user_name=$_SESSION['new_user_name'];
+        $new_user_password=$_SESSION['new_user_password'];
+        $new_user_email=$_SESSION['new_user_email'];
         try{
             $conn = "host=ec2-34-194-73-236.compute-1.amazonaws.com dbname=dl7k5i97ich1l user=vmarkahoqhzaaa password=432da7483948509568cbe6ee852bc3f3ae993e318323455efd363d5866623b17";
             $link = pg_connect($conn);
