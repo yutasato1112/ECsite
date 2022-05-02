@@ -48,10 +48,9 @@
             
             $existence =0;
             if($new_user_password != $new_user_password_retype){
-                //print "<META http-equiv=Refresh content=1;URL=register.php>";
+                print "<META http-equiv=Refresh content=1;URL=register.php>";
             }
             $new_user_password = md5($new_user_password_retype);
-            session_start();
             $_SESSION['new_user_id']=$new_user_id;
             $_SESSION['new_user_name']=$new_user_name;
             $_SESSION['new_user_password']=$new_user_password;
@@ -98,7 +97,7 @@
                         print "<div class=space></div>";
                 }else{
                     print "アカウントIDが既に使用されています";
-                    //print "<META http-equiv=Refresh content=1;URL=register.php>";
+                    print "<META http-equiv=Refresh content=1;URL=register.php>";
                 }
             }catch (PDOException $e){
                 print('Error:'.$e->getMessage());

@@ -54,7 +54,7 @@
             <input type="text" class="form-control" id="formControlInput" placeholder="Password" name="new_user_password">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">再入力</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Re-typing" name="new_user_retype">
+            <input type="text" class="form-control" id="formControlInput" placeholder="Re-typing" name="new_user_password_retype">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">メールアドレス</label>
             <input type="email" class="form-control" id="formControlInput" placeholder="Email address" name="new_user_email">
