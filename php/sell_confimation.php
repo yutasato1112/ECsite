@@ -41,8 +41,18 @@
         <!-- ここにメインコンテンツを記述 -->
         <?php
             $new_item_name=$_POST['new_item_name'];
-            $new_item_pic=$_POST['new_item_pic'];
-            echo $new_item_pic;
+            $new_item_price=$_POST['new_item_price'];
+            $new_item_detail=$_POST['new_item_detail'];
+            $new_item_seller=$id;
+            //これが受け取った画像の名前$_FILES['new_item_pic']['name'];
+            $PATH="../picture/item/";
+            $type= mime_content_type($_FILES['new_item_pic']['tmp_name']);
+            $type_name=substr($type,6);
+            $pic_name=uniqid().".".$type_name;
+            move_uploaded_file($_FILES['new_item_pic']['tmp_name'], $PATH.$pic_name);
+            $new_item_pic=$PATH.$pic_name;
+
+            
         ?>
         <!-- メインコンテンツここまで -->
     </div>
