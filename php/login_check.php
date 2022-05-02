@@ -27,11 +27,12 @@
                 die('接続失敗です。'.pg_last_error());
             } 
             // PostgreSQLに対する処理
-            $result=pg_query("SELECT id, password FROM client WHERE id = '$id'");
+            $result=pg_query("SELECT id, password, client_name FROM client WHERE id = '$id'");
             while($row=pg_fetch_array($result)){
                 $existence+=1;
                 $user_id=$row['id'];
                 $user_pass=$row['password'];
+                $user_name=$row['client_name'];
 
             }
             if($existence >0){
@@ -41,6 +42,7 @@
                         session_start();
                         $_SESSION['user_id']=$id;
                         $_SESSION['user_pass']=$hash_pass;
+                        $_SESSION['user_name']=$user_name;
                         print "<META http-equiv=Refresh content=1;URL=account.php>";
                     }else{
                         print "<META http-equiv=Refresh content=1;URL=login.php>";

@@ -22,11 +22,12 @@
     session_start();
         $id=$_SESSION['user_id'];
         $pass=$_SESSION['user_pass'];
+        $name=$_SESSION['user_name'];
         print "<div class=log_and_reg_area>";
             print "<button type=button onclick=location.href='login.php' class='btn btn-primary btn-lg log'>ログイン</button>";
             print "<button type=button onclick=location.href='register.php' class='btn btn-primary btn-lg reg'>新規登録</button>";
             if(isset($_SESSION["user_id"])){
-                print "<p class=id>$id さん</p>";
+                print "<p class=id>$name さん</p>";
             }
         print "</div>";
     ?>
