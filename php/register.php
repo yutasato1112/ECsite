@@ -33,8 +33,7 @@
     <div class="serch_area">
         <div class="space"></div>
         <form action="serch.php" method="GET" class="serch_keyword">
-            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード"
-                aria-label=".form-control-lg" name="res_name">
+            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name" pattern= "[^#&?=%\+_'.,]+">
             <button type="submit" class="btn btn-secondary kensaku">検索</button>
         </form>
         <div class="space"></div>
@@ -45,19 +44,19 @@
         <div class="space"></div>
         <form action="register_confimation.php" method="GET" class="register_area">
             <label for="formControlInput" class="form-label">ログインID</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name="new_user_id">
+            <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name="new_user_id" pattern= "[^#&?=%\+_'.,]+">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">氏名</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Your name" name="new_user_name">
+            <input type="text" class="form-control" id="formControlInput" placeholder="Your name" name="new_user_name" pattern= "[^#&?=%\+_'.,]+">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">パスワード</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Password" name="new_user_password">
+            <input type="password" class="form-control" id="formControlInput" placeholder="Password" name="new_user_password" pattern= "[^#&?=%\+_'.,]+">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">再入力</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Re-typing" name="new_user_password_retype">
+            <input type="password" class="form-control" id="formControlInput" placeholder="Re-typing" name="new_user_password_retype" pattern= "[^#&?=%\+_'.,]+">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">メールアドレス</label>
-            <input type="email" class="form-control" id="formControlInput" placeholder="Email address" name="new_user_email">
+            <input type="email" class="form-control" id="formControlInput" placeholder="Email address" name="new_user_email" pattern= "[^#&?=%\+_',]+">
             <div class="space"></div>
             <button type="submit" class="btn btn-secondary">OK</button>
         </form>

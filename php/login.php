@@ -31,7 +31,7 @@
     <div class="serch_area">
         <div class="space"></div>
         <form action="serch.php" method="GET" class="serch_keyword">
-            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name">
+            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name" pattern= "[^#&?=%\+_'.,]+">
             <button type="submit" class="btn btn-secondary kensaku">検索</button>
         </form>
         <div class="space"></div>
@@ -48,10 +48,10 @@
         ?>
         <form action="login_check.php" method="GET" class="login_area">
             <label for="formControlInput" class="form-label">ログインID</label>
-            <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name=login_id>
+            <input type="text" class="form-control" id="formControlInput" placeholder="Login ID" name=login_id pattern= "[^#&?=%\+_'.,]+">
             <div class="space"></div>
             <label for="formControlInput" class="form-label">パスワード</label>
-            <input type="password" class="form-control" id="formControlInput" placeholder="Password" name=login_pass>
+            <input type="password" class="form-control" id="formControlInput" placeholder="Password" name=login_pass pattern= "[^#&?=%\+_'.,]+">
             <div class="space"></div>
             <button type="submit" class="btn btn-secondary">OK</button>
         </form>  

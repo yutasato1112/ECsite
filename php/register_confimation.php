@@ -31,7 +31,7 @@
     <div class="serch_area">
         <div class="space"></div>
         <form action="serch.php" method="GET" class="serch_keyword">
-            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name">
+            <input class="form-control form-control-lg keyword" type="text" placeholder="検索キーワード" aria-label=".form-control-lg" name="res_name" pattern= "[^#&?=%\+_'.,]+">
             <button type="submit" class="btn btn-secondary kensaku">検索</button>
         </form>
         <div class="space"></div>
