@@ -39,8 +39,11 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
-
+        <?php
+            $new_item_name=$_POST['new_item_name'];
+            $new_item_pic=$_POST['new_item_pic'];
+            echo $new_item_pic;
+        ?>
         <!-- メインコンテンツここまで -->
     </div>
     <div class="footer">

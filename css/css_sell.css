@@ -59,3 +59,15 @@
     color: white;
     text-align: center;
 }
+.sell_res{
+    width: 75%;
+    position: relative;
+    left: 12.5%;
+}
+.s_title{
+    font-size: 4vh;
+}
+.space_f{
+    height: 3vh;
+    background-color: #EBECCC;
+}

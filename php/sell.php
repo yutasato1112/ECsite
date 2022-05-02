@@ -39,10 +39,26 @@
 
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
-        <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
-
+        <div class="space"></div>
+        <form action="sell_confimation.php" method="POST" enctype="multipart/form-data" class="sell_res">
+            <label for="formControlInput" class="form-label s_title">商品名</label>
+            <input type="text" class="form-control" id="formControlInput" name="new_item_name" placeholder="商品名を入力">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label s_title">商品画像</label><br>
+            <input type="file" name="new_item_pic">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label s_title">価格</label>
+            <input type="number" class="form-control" id="formControlInput" name="new_item_price" placeholder="価格を入力">
+            <div class="space"></div>
+            <label for="formControlInput" class="form-label s_title">詳細説明</label>
+            <input type="text" class="form-control" id="formControlInput" name="new_item_detail" placeholder="商品の詳細説明を入力">
+            <div class="space"></div>
+            <button type="submit" class="btn btn-primary">確認</button>
+            <div class="space"></div>
+        </form>
         <!-- メインコンテンツここまで -->
     </div>
+    <div class="f_space"></div>
     <div class="footer">
         <p class="copy_right">©yutasato & yukioda</p>
     </div>
