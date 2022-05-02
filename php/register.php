@@ -26,7 +26,7 @@
             if(isset($_SESSION["user_id"])){
                 print "<p class=id>$id さん</p>";
             }
-        print "</div>"
+        print "</div>";
     ?>
     <div class="serch_area">
         <div class="space"></div>
