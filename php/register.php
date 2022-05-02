@@ -40,6 +40,8 @@
     <div class="main_contents">
         <!-- ここにメインコンテンツを記述 -->
         <h1>メインコンテンツ(作成時にはこの行は消去してください)<h1>
+        <label for="formControlInput" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="formControlInput" placeholder="name@example.com">
 
         <!-- メインコンテンツここまで -->
     </div>
