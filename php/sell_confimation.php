@@ -44,7 +44,6 @@
             $new_item_price=$_POST['new_item_price'];
             $new_item_detail=$_POST['new_item_detail'];
             $new_item_seller=$id;
-            //これが受け取った画像の名前$_FILES['new_item_pic']['name'];
             $PATH="../picture/item/";
             $type= mime_content_type($_FILES['new_item_pic']['tmp_name']);
             $type_name=substr($type,6);
@@ -52,10 +51,32 @@
             move_uploaded_file($_FILES['new_item_pic']['tmp_name'], $PATH.$pic_name);
             $new_item_pic=$PATH.$pic_name;
 
-            
+            print "<div class=space></div>";
+                    print "<p class=item_title>商品名 : $new_item_name</p>";
+                    print "<div class=space></div>";
+                    print "<img src=$new_item_pic alt=>";
+                    print "<div class=space></div>";
+                    print "<div class=price_buy_area>";
+                        print "<p class=item_price>価格 : $new_item_price</p>";
+                        print "<div class=space_w></div>";
+                        print "<button type=button class='btn btn-primary btn-lg buy'>購入</button>";
+                    print "</div>";
+                    print "<div class=space_lg></div>";
+                    print "<p class=detail>詳細</p>";
+                    print "<p class=detail_content>$new_item_detail</p>";
+                    print "<div class=space_lg></div>";
+                    print "<p class=seller>出品者 : $new_item_seller</p>";
+                    print "<div class=space_lg></div>";
+                    print "<div class=price_buy_area>";
+                    print "<button type=button class='btn btn-primary btn-lg buy'>キャンセル</button>";
+                        print "<div class=space_w></div>";
+                        print "<button type=button class='btn btn-primary btn-lg buy'>出品</button>";
+                    print "</div>";
         ?>
+        <div class="space_f"></div>
         <!-- メインコンテンツここまで -->
     </div>
+    <div class="space_f"></div>
     <div class="footer">
         <p class="copy_right">©yutasato & yukioda</p>
     </div>
